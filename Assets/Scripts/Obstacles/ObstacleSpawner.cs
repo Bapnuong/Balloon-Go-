@@ -3,25 +3,23 @@ using UnityEngine;
 
 public class ObstacleSpawner : MonoBehaviour
 {
-    public GameObject[] obstacles;
-
-    public float spawnRate = 2f;
-    public float heightOffset = 3f;
-
-    void Start()
+    public GameObject obstaclePrefab;
+    public float spawnInterval = 2f;
+    private float timer;
+    void Update()
     {
-        InvokeRepeating("SpawnObstacle",1f,spawnRate);
+        if (GameManager.Instance.gameOver) return;
+        timer += Time.deltaTime;
+        if (timer >= spawnInterval)
+        {
+            SpawnObstacle();
+            timer = 0f;
+        }
     }
-
     void SpawnObstacle()
     {
-        if(obstacles.Length == 0) return;
-
-        int index = Random.Range(0, obstacles.Length);
-
-        Vector3 pos = transform.position;
-        pos.y += Random.Range(-heightOffset,heightOffset);
-
-        Instantiate(obstacles[index],pos,Quaternion.identity);
+        float yPos = Random.Range(-3f, -3f);
+        Vector3 spawnPos = new Vector3(transform.position.x, yPos, 0);
+        Instantiate(obstaclePrefab, spawnPos, Quaternion.identity);
     }
 }

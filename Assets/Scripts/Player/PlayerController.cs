@@ -22,11 +22,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.CompareTag("Obstacle") || col.gameObject.CompareTag("Enemy"))
+        if (col.CompareTag("Enemy"))
         {
             GameManager.Instance.EndGame();
+            Debug.Log("Game Over!");
+        }
+
+        if (col.CompareTag("Item"))
+        {
+            Destroy(col.gameObject);
         }
     }
 }

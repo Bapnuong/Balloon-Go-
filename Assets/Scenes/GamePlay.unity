@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 77963530}
   - component: {fileID: 77963531}
   - component: {fileID: 77963532}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: 02_Forest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,8 +197,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 19410325
+  m_SortingLayer: -3
   m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 5ca4cca794164da4998673c61f018a56, type: 3}
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54369d755cb658641993e3201485f7df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CoinSpawner
-  coinPrefab: {fileID: 100000, guid: 49e6ee33250214a9facc214f3a2fecb7, type: 3}
+  coinPrefab: {fileID: 8240071506463386645, guid: 49e6ee33250214a9facc214f3a2fecb7, type: 3}
   spawnRate: 3
 --- !u!4 &233314896
 Transform:
@@ -264,7 +264,7 @@ Transform:
   m_GameObject: {fileID: 233314894}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.20262, y: -0.2101, z: 0}
+  m_LocalPosition: {x: 8.85, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 244004659}
   - component: {fileID: 244004660}
   - component: {fileID: 244004661}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: 09_Bushes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -348,8 +348,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 19410325
+  m_SortingLayer: -3
   m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 5ce502a7ea7810b4a894499b06c1f846, type: 3}
@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 369444386}
   - component: {fileID: 369444388}
   - component: {fileID: 369444387}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: 01_Sky (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -466,8 +466,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 19410325
+  m_SortingLayer: -3
   m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: b16fda486e947474288d51496b7f4d98, type: 3}
@@ -673,7 +673,7 @@ GameObject:
   - component: {fileID: 534717753}
   - component: {fileID: 534717755}
   - component: {fileID: 534717754}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: 07_Forest (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -753,8 +753,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 19410325
+  m_SortingLayer: -3
   m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 465ef5098094fe7469616fca56973b60, type: 3}
@@ -778,7 +778,7 @@ GameObject:
   - component: {fileID: 543532244}
   - component: {fileID: 543532245}
   - component: {fileID: 543532246}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: 01_Sky
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -845,8 +845,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 19410325
+  m_SortingLayer: -3
   m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: b16fda486e947474288d51496b7f4d98, type: 3}
@@ -962,7 +962,7 @@ GameObject:
   - component: {fileID: 612306412}
   - component: {fileID: 612306414}
   - component: {fileID: 612306413}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: 08_Particles (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1042,8 +1042,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 19410325
+  m_SortingLayer: -3
   m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 4911c57eb1b289b4588041c3a0735b11, type: 3}
@@ -1067,7 +1067,7 @@ GameObject:
   - component: {fileID: 615394747}
   - component: {fileID: 615394748}
   - component: {fileID: 615394749}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: 10_Mist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1134,8 +1134,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 19410325
+  m_SortingLayer: -3
   m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: d795b2ee73a0cd84c84594e41f0f80f2, type: 3}
@@ -1223,7 +1223,7 @@ GameObject:
   - component: {fileID: 802056011}
   - component: {fileID: 802056012}
   - component: {fileID: 802056013}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: 08_Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1290,8 +1290,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 19410325
+  m_SortingLayer: -3
   m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 4911c57eb1b289b4588041c3a0735b11, type: 3}
@@ -1569,7 +1569,7 @@ GameObject:
   - component: {fileID: 1065946881}
   - component: {fileID: 1065946883}
   - component: {fileID: 1065946882}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: 10_Mist (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1649,8 +1649,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 19410325
+  m_SortingLayer: -3
   m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: d795b2ee73a0cd84c84594e41f0f80f2, type: 3}
@@ -1674,7 +1674,7 @@ GameObject:
   - component: {fileID: 1168328300}
   - component: {fileID: 1168328301}
   - component: {fileID: 1168328302}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: 04_Forest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1741,8 +1741,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 19410325
+  m_SortingLayer: -3
   m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: f9c08397547dbc74d81b0b3831229f12, type: 3}
@@ -1858,7 +1858,7 @@ GameObject:
   - component: {fileID: 1215115569}
   - component: {fileID: 1215115570}
   - component: {fileID: 1215115571}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: 05_Forest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1925,8 +1925,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 19410325
+  m_SortingLayer: -3
   m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 3dda082662719514b8fa93911e760e0f, type: 3}
@@ -2040,7 +2040,7 @@ GameObject:
   - component: {fileID: 1380476466}
   - component: {fileID: 1380476467}
   - component: {fileID: 1380476468}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: 03_Forest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2107,8 +2107,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 19410325
+  m_SortingLayer: -3
   m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 1f9f9ffa09a26014d898d07f9896cd5d, type: 3}
@@ -2145,7 +2145,7 @@ GameObject:
   - component: {fileID: 1477674725}
   - component: {fileID: 1477674727}
   - component: {fileID: 1477674726}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: 05_Forest (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2225,8 +2225,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 19410325
+  m_SortingLayer: -3
   m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 3dda082662719514b8fa93911e760e0f, type: 3}
@@ -2250,7 +2250,7 @@ GameObject:
   - component: {fileID: 1511370596}
   - component: {fileID: 1511370598}
   - component: {fileID: 1511370597}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: 03_Forest (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2330,8 +2330,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 19410325
+  m_SortingLayer: -3
   m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 1f9f9ffa09a26014d898d07f9896cd5d, type: 3}
@@ -2355,7 +2355,7 @@ GameObject:
   - component: {fileID: 1584251164}
   - component: {fileID: 1584251166}
   - component: {fileID: 1584251165}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: 02_Forest (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2435,8 +2435,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 19410325
+  m_SortingLayer: -3
   m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 5ca4cca794164da4998673c61f018a56, type: 3}
@@ -2552,7 +2552,7 @@ GameObject:
   - component: {fileID: 1612684071}
   - component: {fileID: 1612684073}
   - component: {fileID: 1612684072}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: 09_Bushes (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2632,8 +2632,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 19410325
+  m_SortingLayer: -3
   m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 5ce502a7ea7810b4a894499b06c1f846, type: 3}
@@ -2657,7 +2657,7 @@ GameObject:
   - component: {fileID: 1642687710}
   - component: {fileID: 1642687711}
   - component: {fileID: 1642687712}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: 06_Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2724,8 +2724,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 19410325
+  m_SortingLayer: -3
   m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 767de8d508911a94b82618daff5e5ec4, type: 3}
@@ -2762,7 +2762,7 @@ GameObject:
   - component: {fileID: 1687941145}
   - component: {fileID: 1687941147}
   - component: {fileID: 1687941146}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: 04_Forest (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2842,8 +2842,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 19410325
+  m_SortingLayer: -3
   m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: f9c08397547dbc74d81b0b3831229f12, type: 3}
@@ -2856,6 +2856,52 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &1746063043
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1746063045}
+  - component: {fileID: 1746063044}
+  m_Layer: 0
+  m_Name: BirdSpawm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1746063044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746063043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07edb8709c3f0f444b095f0d9a5aeda0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BirdSpawn
+  birdPrefab: {fileID: 2503634310712405937, guid: 678bce44cee9ad341858d99e1cbbb3cb, type: 3}
+  spawnInterval: 10
+--- !u!4 &1746063045
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746063043}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.62, y: -0.03, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1749475812
 GameObject:
   m_ObjectHideFlags: 0
@@ -2867,7 +2913,7 @@ GameObject:
   - component: {fileID: 1749475813}
   - component: {fileID: 1749475815}
   - component: {fileID: 1749475814}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: 06_Particles (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2947,8 +2993,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 19410325
+  m_SortingLayer: -3
   m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 767de8d508911a94b82618daff5e5ec4, type: 3}
@@ -3098,7 +3144,7 @@ GameObject:
   - component: {fileID: 1879172928}
   - component: {fileID: 1879172929}
   - component: {fileID: 1879172930}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: 07_Forest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3165,8 +3211,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 19410325
+  m_SortingLayer: -3
   m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 465ef5098094fe7469616fca56973b60, type: 3}
@@ -3192,6 +3238,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxBackground
   speed: 0.5
+--- !u!1 &1882908352
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1882908354}
+  - component: {fileID: 1882908353}
+  m_Layer: 0
+  m_Name: ObsctacleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1882908353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882908352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 193fa8db218c6c3478c7cc1cf2564e3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObstacleSpawner
+  obstaclePrefab: {fileID: 6711032247943768428, guid: b0b0b8c236c6ad241a286de336874d0e, type: 3}
+  spawnInterval: 12
+--- !u!4 &1882908354
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882908352}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 28.7, y: -6.08, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1984037571
 GameObject:
   m_ObjectHideFlags: 0
@@ -3359,53 +3451,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2102848767}
   m_CullTransparentMesh: 1
---- !u!1 &2114985253
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2114985255}
-  - component: {fileID: 2114985254}
-  m_Layer: 0
-  m_Name: ObsctacleManagers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2114985254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2114985253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 193fa8db218c6c3478c7cc1cf2564e3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObstacleSpawner
-  obstacles: []
-  spawnRate: 2
-  heightOffset: 3
---- !u!4 &2114985255
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2114985253}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.20262, y: -0.2101, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5813303683939030935
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3418,9 +3463,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Balloon
       objectReference: {fileID: 0}
+    - target: {fileID: 6437248070819527800, guid: b4e98b8ff099124469a8421caa61ed2c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 5359d8a4efeecc6408955949fd4b34a2, type: 2}
     - target: {fileID: 8822494921559029718, guid: b4e98b8ff099124469a8421caa61ed2c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.75
+      value: -6.72
       objectReference: {fileID: 0}
     - target: {fileID: 8822494921559029718, guid: b4e98b8ff099124469a8421caa61ed2c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3476,4 +3525,5 @@ SceneRoots:
   - {fileID: 1757046077}
   - {fileID: 797849053}
   - {fileID: 233314896}
-  - {fileID: 2114985255}
+  - {fileID: 1746063045}
+  - {fileID: 1882908354}
