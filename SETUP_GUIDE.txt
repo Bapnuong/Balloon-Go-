@@ -1,0 +1,43 @@
+
+BALLOON GO - FULL PROTOTYPE
+
+IMPORT
+1. Create new Unity 2D project
+2. Extract this zip
+3. Copy the Assets folder into your Unity project
+4. Unity will auto compile scripts
+
+SCENE SETUP
+
+Create objects:
+
+GameManager
+ScoreManager
+UIManager
+
+Player
+- Rigidbody2D
+- CircleCollider2D
+- PlayerController
+
+Spawner
+- ObstacleSpawner
+
+CoinSpawner
+- CoinSpawner script
+
+Canvas
+- ScoreText
+- CoinText
+- GameOverPanel
+
+Tag Player object as:
+Player
+
+Tag obstacle prefabs:
+Obstacle
+
+CONTROLS
+SPACE = Fly
+
+This is a full working prototype for a 2D endless runner balloon game.

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 36a337ef75385ab40bd8f8452f4c8a9a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196612
+  packageName: 2D Birds(Eagle)
+  packageVersion: 1.0
+  assetPath: Assets/2DBirds_Eagle/Spritesheets/Eagle_King_Fly/Eagle_King_Fly.anim
+  uploadId: 436693
