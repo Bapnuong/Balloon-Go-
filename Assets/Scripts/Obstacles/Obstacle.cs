@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class Obstacle : MonoBehaviour
@@ -7,9 +6,10 @@ public class Obstacle : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector2.left * speed * Time.deltaTime);
+        if (GameManager.Instance != null && GameManager.Instance.State != GameState.Playing) return;
 
-        if(transform.position.x < -15)
+        transform.position += Vector3.left * (speed * Time.deltaTime);
+        if (transform.position.x < -24f)
             Destroy(gameObject);
     }
 }

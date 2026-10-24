@@ -1,43 +1,92 @@
+BALLOON GO - SETUP GUIDE
+========================
 
-BALLOON GO - FULL PROTOTYPE
+1. YEU CAU
+----------
+- Unity 6000.3.6f1 (hoac Unity 6 LTS tuong thich)
+- Module build: Windows Standalone + WebGL
+- Khong can cai them plugin hay file am thanh ngoai
 
-IMPORT
-1. Create new Unity 2D project
-2. Extract this zip
-3. Copy the Assets folder into your Unity project
-4. Unity will auto compile scripts
+2. MO PROJECT
+-------------
+1. Mo Unity Hub -> Add project -> chon thu muc goc cua project.
+2. Mo scene: Assets/Scenes/GamePlay.unity
+3. Nhan Play.
 
-SCENE SETUP
+Khi chay, cac he thong se tu khoi tao:
+- GameManager, ScoreManager (co san trong scene)
+- AudioManager, ShopSystem, EffectsManager, FogController (tao tu GameBootstrap)
+- UIManager dung toan bo UI bang code
 
-Create objects:
+3. DIEU KHIEN
+-------------
+- Space / chuot trai / cham man hinh: bay len
+- Esc hoac P: tam dung / tiep tuc
+- Space o man hinh game over: choi lai
+- Space hoac Enter o menu: bat dau
 
-GameManager
-ScoreManager
-UIManager
+4. LUU TIEN TRINH
+-----------------
+Game dung PlayerPrefs de luu:
+- Diem ky luc
+- Tong xu
+- Cac bong da mo khoa
+- Bong dang chon
+- Trang thai am thanh
+- Da xem cau chuyen
 
-Player
-- Rigidbody2D
-- CircleCollider2D
-- PlayerController
+Tren Windows: HKEY_CURRENT_USER\Software\<company>\<product>
+Tren WebGL: IndexedDB cua trinh duyet.
 
-Spawner
-- ObstacleSpawner
+5. BUILD
+--------
+Trong Unity, dung menu:
+- Balloon Go > Build Windows
+- Balloon Go > Build WebGL
+- Balloon Go > Build All
 
-CoinSpawner
-- CoinSpawner script
+Ket qua:
+- Builds/Windows/BalloonGo.exe
+- Builds/WebGL/index.html
+- Builds/BalloonGo-Windows.zip
+- Builds/BalloonGo-WebGL.zip
 
-Canvas
-- ScoreText
-- CoinText
-- GameOverPanel
+6. UPLOAD ITCH.IO
+-----------------
+- Tao game moi tren itch.io.
+- Upload BalloonGo-WebGL.zip cho ban web (chon "This file will be played in the browser").
+- Upload BalloonGo-Windows.zip cho ban Windows.
+- Kich thuoc nhung khuyen nghi: 1280 x 720.
+- Neu WebGL bi loi tren itch.io, kiem tra lai compression: ban build mac dinh dung Gzip + Decompression Fallback.
 
-Tag Player object as:
-Player
+7. CAU TRUC CHINH
+-----------------
+Assets/Scripts/Core       : luong game, diem, shop, luu, am thanh
+Assets/Scripts/Player     : dieu khien bong bay, skin
+Assets/Scripts/Obstacles  : canh cay
+Assets/Scripts/Enemies    : chim
+Assets/Scripts/Collectibles: xu
+Assets/Scripts/UI         : UI runtime, theme, panel, safe area
+Assets/Scripts/Visual     : fog, hieu ung, camera shake, parallax
+Assets/Resources/Balloons : 18 sprite bong bay
+Assets/Resources/Fonts    : LiberationSans.ttf (ho tro tieng Viet)
+Assets/Editor             : build script
 
-Tag obstacle prefabs:
-Obstacle
+8. XU LY SU CO
+--------------
+- Khong thay UI: kiem tra scene co UIManager khong; UIManager se tu tao Canvas "BG_Canvas".
+- Chu bi thieu dau: kiem tra Assets/Resources/Fonts/LiberationSans.ttf con ton tai.
+- Khong vao duoc game: kiem tra console co loi compile khong; thu xoa Library/ScriptAssemblies va de Unity import lai.
+- Am thanh khong co: kiem tra nut AM THANH trong menu/pause; tren WebGL can click vao game truoc khi audio bat dau.
+- Build WebGL loi: dam bao da cai WebGL Build Support trong Unity Hub.
 
-CONTROLS
-SPACE = Fly
+9. CREDITS
+----------
+- Balloon: Qookie Games - Balloons Free
+- Birds: SR Studios Kerala
+- Coin: 2DRPK
+- Forest background: FREE Parallax Forest Background HQ
+- Font: Liberation Sans (SIL OFL)
+- Code/UI/audio: Balloon Go project
 
-This is a full working prototype for a 2D endless runner balloon game.
+Chuc ban choi vui va tim duoc duong ve nha!

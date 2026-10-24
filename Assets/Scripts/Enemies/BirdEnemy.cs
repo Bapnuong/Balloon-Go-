@@ -2,36 +2,39 @@ using UnityEngine;
 
 public class BirdEnemy : MonoBehaviour
 {
-    public float speed = 6f;
-    private Vector3 targetPosition;
-    private bool reachedTarget = false;
+    public float speed = 5f;
+    public float amplitude = 0.8f;
+    public float frequency = 1.7f;
+    public float phase;
+
+    float baseY;
+    float timeOffset;
+    SpriteRenderer sr;
+
+    void Awake()
+    {
+        sr = GetComponentInChildren<SpriteRenderer>();
+        baseY = transform.position.y;
+        timeOffset = Random.value * 10f;
+    }
 
     void Start()
     {
-        targetPosition = PlayerController.lastPosition;
+        baseY = transform.position.y;
     }
 
     void Update()
     {
-        if (!reachedTarget)
-        {
-            transform.position = Vector3.MoveTowards(
-                transform.position,
-                targetPosition,
-                speed * Time.deltaTime
-            );
+        if (GameManager.Instance != null && GameManager.Instance.State != GameState.Playing) return;
 
-            if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
-            {
-                reachedTarget = true;
-            }
-        }
-        else
-        {
-            transform.Translate(Vector2.left * speed * Time.deltaTime);
-        }
+        float x = transform.position.x - speed * Time.deltaTime;
+        float y = baseY + Mathf.Sin((Time.time + timeOffset) * frequency + phase) * amplitude;
+        transform.position = new Vector3(x, y, transform.position.z);
+        transform.rotation = Quaternion.Euler(0f, 0f, Mathf.Cos((Time.time + timeOffset) * frequency + phase) * 8f);
 
-        if (transform.position.x < -15)
+        if (sr != null) sr.flipX = false;
+
+        if (x < -20f)
             Destroy(gameObject);
     }
 }
