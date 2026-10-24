@@ -4,6 +4,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public const int MaxRunScore = 10000;
 
     public GameState State { get; private set; } = GameState.Menu;
     public PlayerController Player { get; set; }
@@ -58,7 +59,13 @@ public class GameManager : MonoBehaviour
             if (add > 0)
             {
                 scoreAccumulator -= add;
-                if (ScoreManager.Instance != null) ScoreManager.Instance.AddScore(add);
+                if (ScoreManager.Instance != null)
+                {
+                    int remaining = MaxRunScore - ScoreManager.Instance.Score;
+                    ScoreManager.Instance.AddScore(Mathf.Min(add, remaining));
+                    if (ScoreManager.Instance.Score >= MaxRunScore)
+                        EndGame(DeathCause.ScoreLimit);
+                }
             }
 
             if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
@@ -203,9 +210,19 @@ public class GameManager : MonoBehaviour
         if (State != GameState.Playing) return;
         State = GameState.Dying;
         LastDeathCause = cause;
-        if (AudioManager.Instance != null) AudioManager.Instance.Play(Sfx.Hit, 1f);
-        if (EffectsManager.Instance != null) EffectsManager.Instance.Shake(0.35f, 0.28f);
-        if (UIManager.Instance != null) UIManager.Instance.FlashDamage();
+        bool reachedGoal = cause == DeathCause.ScoreLimit;
+        if (reachedGoal)
+        {
+            AudioManager.Instance?.Play(Sfx.Record, 1f);
+            if (EffectsManager.Instance != null && Player != null)
+                EffectsManager.Instance.SpawnPop(Player.transform.position, UITheme.Gold);
+        }
+        else
+        {
+            AudioManager.Instance?.Play(Sfx.Hit, 1f);
+            EffectsManager.Instance?.Shake(0.35f, 0.28f);
+            UIManager.Instance?.FlashDamage();
+        }
         if (Player != null) Player.Die();
         StartCoroutine(GameOverRoutine());
     }

@@ -986,7 +986,12 @@ public class UIManager : MonoBehaviour
         HideHint();
         if (GameManager.Instance != null)
         {
-            if (GameManager.Instance.LastDeathCause == DeathCause.Boundary)
+            if (GameManager.Instance.LastDeathCause == DeathCause.ScoreLimit)
+            {
+                gameOverTitle.text = "BẠN ĐÃ VỀ ĐÍCH!";
+                gameOverSubtitle.text = "10.000 điểm! Bạn đã tìm được đường về nhà.";
+            }
+            else if (GameManager.Instance.LastDeathCause == DeathCause.Boundary)
             {
                 gameOverTitle.text = "SƯƠNG MÙ QUÁ DÀY!";
                 gameOverSubtitle.text = "Bạn chạm vào ranh giới của khu rừng.";

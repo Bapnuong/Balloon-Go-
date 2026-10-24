@@ -14,5 +14,6 @@ public enum GameState
 public enum DeathCause
 {
     Obstacle,
-    Boundary
+    Boundary,
+    ScoreLimit
 }
