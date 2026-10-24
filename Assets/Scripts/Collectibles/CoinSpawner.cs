@@ -48,7 +48,8 @@ public class CoinSpawner : MonoBehaviour
 
         float halfWidth = cam.orthographicSize * cam.aspect;
         float startX = cam.transform.position.x + halfWidth + 2.0f;
-        float baseY = Random.Range(-3.2f, 3.2f);
+        // Keep the whole coin pattern comfortably inside the camera bounds.
+        float baseY = Random.Range(-2.8f, 2.8f);
         int pattern = Random.Range(0, 3);
         int count = pattern == 0 ? Random.Range(3, 6) : Random.Range(4, 7);
         float spacing = 0.85f;
@@ -62,13 +63,20 @@ public class CoinSpawner : MonoBehaviour
             else if (pattern == 2)
                 y = baseY + (i - (count - 1) * 0.5f) * (i - (count - 1) * 0.5f) * 0.22f - 0.6f;
 
-            y = Mathf.Clamp(y, -3.5f, 3.5f);
+            y = Mathf.Clamp(y, -3.2f, 3.2f);
             Vector3 pos = new Vector3(startX + i * spacing, y, 0f);
 
             if (enemyMask != 0 && Physics2D.OverlapCircle(pos, 0.45f, enemyMask) != null)
                 continue;
 
             var go = Instantiate(coinPrefab, pos, Quaternion.identity, spawnRoot);
+            var renderer = go.GetComponent<SpriteRenderer>();
+            if (renderer != null)
+            {
+                renderer.enabled = true;
+                renderer.sortingLayerName = "Player";
+                renderer.sortingOrder = 20;
+            }
             var move = go.GetComponent<CoinMove>();
             if (move != null) move.speed = speed;
             spawned.Add(go);

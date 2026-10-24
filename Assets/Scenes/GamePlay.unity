@@ -224,6 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxBackground
   speed: 0.5
+  seamOverlap: 0.12
 --- !u!1 &233314894
 GameObject:
   m_ObjectHideFlags: 0
@@ -2275,10 +2276,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BirdSpawn
   birdPrefab: {fileID: 2503634310712405937, guid: 678bce44cee9ad341858d99e1cbbb3cb, type: 3}
-  startInterval: 6.5
-  endInterval: 2.4
-  minSpeed: 4.8
-  maxSpeed: 7.5
+  birdPrefabs:
+  - {fileID: 2503634310712405937, guid: 678bce44cee9ad341858d99e1cbbb3cb, type: 3}
+  - {fileID: 5999396178547107704, guid: a9094ffaad80ea14da4331fb6d9a7e1e, type: 3}
+  - {fileID: 2446135660906146453, guid: b0564db6d1e40eb4d9bf3b2c09ac616e, type: 3}
+  - {fileID: 1321272492828708627, guid: bc7602e785564c2499c14b0c6edde782, type: 3}
+  - {fileID: 3879102880394167928, guid: 838483c6d0ebe0c4f806f7deed33b6da, type: 3}
+  startInterval: 5.2
+  endInterval: 1.8
+  minSpeed: 6.2
+  maxSpeed: 9.4
+  birdScale: 0.18
 --- !u!4 &1746063045
 Transform:
   m_ObjectHideFlags: 0
@@ -2658,11 +2666,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleSpawner
   obstaclePrefab: {fileID: 6711032247943768428, guid: b0b0b8c236c6ad241a286de336874d0e, type: 3}
   yRange: {x: -2.2, y: 2.2}
-  startInterval: 2.7
-  endInterval: 1.4
-  minSpeed: 4
-  maxSpeed: 7.2
-  branchScale: 0.8
+  startInterval: 2.35
+  endInterval: 1.1
+  minSpeed: 4.8
+  maxSpeed: 8.2
+  branchScale: 0.56
+  edgeVisibleDepth: 1.3
 --- !u!4 &1882908354
 Transform:
   m_ObjectHideFlags: 0

@@ -23,6 +23,7 @@ public static class UITheme
     public static Font Font { get; private set; }
     public static Sprite Rounded { get; private set; }
     public static Sprite RoundedSmall { get; private set; }
+    public static Sprite HandDrawn { get; private set; }
     public static Sprite Circle { get; private set; }
     public static Sprite SoftCircle { get; private set; }
     public static Sprite Coin { get; private set; }
@@ -48,6 +49,7 @@ public static class UITheme
 
         Rounded = MakeRounded(64, 20, 24);
         RoundedSmall = MakeRounded(48, 14, 18);
+        HandDrawn = MakeHandDrawn(128);
         Circle = MakeCircle(64);
         SoftCircle = MakeSoftCircle(128);
         Coin = MakeCoin(64);
@@ -106,6 +108,37 @@ public static class UITheme
         tex.SetPixels32(px);
         tex.Apply();
         return ToSprite(tex, new Vector4(border, border, border, border));
+    }
+
+    static Sprite MakeHandDrawn(int size)
+    {
+        var tex = NewTex(size, size);
+        var px = new Color32[size * size];
+        float half = size * 0.5f;
+        for (int y = 0; y < size; y++)
+        {
+            for (int x = 0; x < size; x++)
+            {
+                float nx = (x + 0.5f - half) / half;
+                float ny = (y + 0.5f - half) / half;
+                float wobble = Mathf.Sin(x * 0.31f) * 0.018f + Mathf.Cos(y * 0.27f) * 0.014f;
+                float edge = Mathf.Max(Mathf.Abs(nx), Mathf.Abs(ny)) + wobble;
+                float alpha = Mathf.Clamp01((1f - edge) * 18f);
+                if (alpha <= 0f)
+                {
+                    px[y * size + x] = new Color32(0, 0, 0, 0);
+                    continue;
+                }
+
+                bool ink = edge > 0.88f;
+                px[y * size + x] = ink
+                    ? new Color32(48, 57, 52, (byte)(alpha * 190f))
+                    : new Color32(255, 255, 255, (byte)(alpha * 255f));
+            }
+        }
+        tex.SetPixels32(px);
+        tex.Apply();
+        return ToSprite(tex, new Vector4(28f, 28f, 28f, 28f));
     }
 
     static Sprite MakeCircle(int size)
@@ -389,7 +422,7 @@ public static class UITheme
             rt.sizeDelta = size;
 
         var img = go.GetComponent<Image>();
-        img.sprite = Rounded;
+        img.sprite = HandDrawn;
         img.type = Image.Type.Sliced;
         img.color = bg;
 
@@ -398,12 +431,17 @@ public static class UITheme
         btn.transition = Selectable.Transition.ColorTint;
         var cb = btn.colors;
         cb.normalColor = Color.white;
-        cb.highlightedColor = new Color(1.08f, 1.08f, 1.08f, 1f);
-        cb.pressedColor = new Color(0.82f, 0.82f, 0.82f, 1f);
+        cb.highlightedColor = new Color(1.03f, 1.03f, 1.03f, 1f);
+        cb.pressedColor = new Color(0.9f, 0.9f, 0.9f, 1f);
         cb.selectedColor = Color.white;
         cb.disabledColor = new Color(0.45f, 0.45f, 0.45f, 0.5f);
         cb.fadeDuration = 0.08f;
         btn.colors = cb;
+
+        var ink = go.AddComponent<Outline>();
+        ink.effectColor = new Color(0.04f, 0.07f, 0.06f, 0.55f);
+        ink.effectDistance = new Vector2(1.5f, -1.5f);
+        ink.useGraphicAlpha = true;
 
         var labelText = CreateText(go.transform, "Label", label, fontSize, textColor, TextAnchor.MiddleCenter, FontStyle.Bold);
         var lrt = labelText.rectTransform;

@@ -7,13 +7,19 @@ public class Coin : MonoBehaviour
 
     void Awake()
     {
-        // Coins must render in front of branches; the old prefab sat on the
-        // Item sorting layer, behind every obstacle, so they were invisible.
+        // The imported animation replaces the sprite with sliced frames that
+        // can be invisible after runtime prefab overrides. Keep the visible
+        // prefab frame and let CoinMove handle the simple spin effect.
+        var animator = GetComponent<Animator>();
+        if (animator != null) animator.enabled = false;
+
+        // Coins must render in front of branches and background layers.
         var sr = GetComponent<SpriteRenderer>();
         if (sr != null)
         {
-            sr.sortingLayerName = "Player";
-            sr.sortingOrder = 5;
+            sr.enabled = true;
+            sr.sortingLayerID = SortingLayer.NameToID("Player");
+            sr.sortingOrder = 20;
         }
     }
 
