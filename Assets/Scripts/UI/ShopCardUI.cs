@@ -17,18 +17,20 @@ public class ShopCardUI : MonoBehaviour
         icon.sprite = item.Sprite;
         icon.preserveAspect = true;
         nameText.text = item.Name;
+        background.sprite = UITheme.WoodCard;
+        background.type = Image.Type.Sliced;
 
         if (selected)
         {
-            background.color = UITheme.Gold;
-            nameText.color = UITheme.PanelDark;
+            background.color = UITheme.WoodHoney;
+            nameText.color = UITheme.WoodDeepTone;
             statusText.text = "ĐANG DÙNG";
-            statusText.color = UITheme.PanelDark;
+            statusText.color = UITheme.WoodDeepTone;
             icon.color = Color.white;
         }
         else if (owned)
         {
-            background.color = UITheme.PanelLight;
+            background.color = UITheme.WoodOak;
             nameText.color = UITheme.Cream;
             statusText.text = "ĐÃ CÓ";
             statusText.color = UITheme.Mint;
@@ -36,7 +38,7 @@ public class ShopCardUI : MonoBehaviour
         }
         else
         {
-            background.color = UITheme.PanelDark;
+            background.color = UITheme.WoodDarkTone;
             nameText.color = affordable ? UITheme.Cream : UITheme.Muted;
             statusText.text = item.Price + " xu";
             statusText.color = affordable ? UITheme.Gold : UITheme.Coral;

@@ -73,6 +73,9 @@ mono_crash.*
 *.unitypackage.meta
 *.app
 
+# Local asset backup archive
+/Assets.zip
+
 # Crashlytics generated file
 crashlytics-build.properties
 

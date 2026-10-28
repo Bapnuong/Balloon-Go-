@@ -191,7 +191,7 @@ public class UIManager : MonoBehaviour
 
         content = UITheme.CreatePanel(root.transform, "Content", size, UITheme.Panel, true);
         UITheme.AddOutline(content.GetComponent<Image>(),
-            new Color(0.45f, 0.78f, 0.66f, 0.16f), new Vector2(2f, -2f));
+            new Color(0.85f, 0.64f, 0.25f, 0.20f), new Vector2(2f, -2f));
 
         var panel = root.AddComponent<UIPanel>();
         panel.content = content;
@@ -244,8 +244,8 @@ public class UIManager : MonoBehaviour
             TextAnchor.UpperLeft, FontStyle.Bold);
         TopLeft(title.rectTransform, new Vector2(1100f, 120f), new Vector2(80f, 50f));
 
-        var accent = UITheme.CreateImage(content, "Accent", UITheme.RoundedSmall, UITheme.Gold, false);
-        TopLeft(accent.rectTransform, new Vector2(110f, 6f), new Vector2(84f, 178f));
+        var accent = UITheme.CreateImage(content, "Accent", UITheme.Brush, UITheme.Gold, false);
+        TopLeft(accent.rectTransform, new Vector2(320f, 24f), new Vector2(84f, 170f));
 
         var subtitle = UITheme.CreateText(content, "Subtitle", "TÌM ĐƯỜNG VỀ NHÀ", 26, UITheme.Mint,
             TextAnchor.UpperLeft);
@@ -679,9 +679,10 @@ public class UIManager : MonoBehaviour
         go.transform.SetParent(shopGrid, false);
 
         var bg = go.GetComponent<Image>();
-        bg.sprite = UITheme.Rounded;
+        bg.sprite = UITheme.WoodCard;
         bg.type = Image.Type.Sliced;
-        bg.color = UITheme.PanelDark;
+        bg.color = UITheme.WoodDarkTone;
+        UITheme.AddNails(go.GetComponent<RectTransform>(), new Vector2(180f, 150f));
 
         var button = go.GetComponent<Button>();
         button.targetGraphic = bg;
@@ -744,8 +745,8 @@ public class UIManager : MonoBehaviour
         if (tab == null) return;
         var img = tab.GetComponent<Image>();
         var label = tab.GetComponentInChildren<Text>();
-        img.color = active ? UITheme.Gold : UITheme.PanelLight;
-        if (label != null) label.color = active ? UITheme.PanelDark : UITheme.Cream;
+        img.color = active ? UITheme.WoodHoney : UITheme.WoodOak;
+        if (label != null) label.color = active ? UITheme.WoodDeepTone : UITheme.Cream;
     }
 
     void UpdateShopPreview()
@@ -920,12 +921,12 @@ public class UIManager : MonoBehaviour
         UITheme.Stretch((RectTransform)toastRoot.transform);
         toastGroup = toastRoot.GetComponent<CanvasGroup>();
 
-        var bg = UITheme.CreateImage(toastRoot.transform, "Bg", UITheme.Rounded,
-            new Color(0.03f, 0.09f, 0.08f, 0.94f), false);
-        Place(bg.rectTransform, new Vector2(0.5f, 0f), new Vector2(0.5f, 0f), new Vector2(0.5f, 0f),
+        var bg = UITheme.CreatePanel(toastRoot.transform, "Bg", new Vector2(500f, 64f),
+            UITheme.WoodDarkTone, true);
+        Place(bg, new Vector2(0.5f, 0f), new Vector2(0.5f, 0f), new Vector2(0.5f, 0f),
             new Vector2(0f, 120f), new Vector2(500f, 64f));
 
-        toastText = UITheme.CreateText(bg.transform, "Text", "", 22, UITheme.Cream,
+        toastText = UITheme.CreateText(bg, "Text", "", 22, UITheme.Cream,
             TextAnchor.MiddleCenter, FontStyle.Bold);
         UITheme.Stretch(toastText.rectTransform, 12f);
 

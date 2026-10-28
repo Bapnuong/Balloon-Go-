@@ -18,6 +18,9 @@ Balloon Go là một game endless runner 2D nhẹ nhàng, lấy cảm hứng t�
 - Cửa hàng mua và chọn bóng bằng xu.
 - Lưu kỷ lục, tổng xu và bộ sưu tập bóng giữa các lần chơi.
 - Khu rừng sương mù với nền parallax nhiều lớp, sương trôi, bụi sáng và dải cảnh báo ranh giới.
+- 3 biến thể cành cây (xanh, vàng, rêu) mọc từ mép trên/dưới; gốc cành luôn nằm ngoài vùng chơi.
+- Chim nhỏ, rõ ràng và dễ né hơn.
+- UI gỗ thủ công với panel, nút, đinh tán, lá cây và nét cọ vẽ procedural.
 - Câu chuyện mở đầu, hướng dẫn và toàn bộ UI bằng tiếng Việt.
 - Hiệu ứng va chạm, camera shake, pop bóng bay và âm thanh procedural.
 - Hỗ trợ bàn phím, chuột và cảm ứng; UI tự co giãn theo màn hình.
@@ -32,7 +35,7 @@ Balloon Go là một game endless runner 2D nhẹ nhàng, lấy cảm hứng t�
 - Bird sprites: **SR Studios Kerala** – *Cute Birds* / *Cute Birds (4 in 1) Mini* / *Eagle Bird 2D*
 - Coin sprite: **2DRPK**
 - Forest background: **FREE Parallax Forest Background HQ**
-- Font: **Liberation Sans** (SIL Open Font License)
+- Font: **Be Vietnam Pro** (SIL Open Font License); Liberation Sans fallback (SIL OFL)
 - Code, UI, hiệu ứng và âm thanh procedural: **Balloon Go**
 
 ---
@@ -49,6 +52,6 @@ Balloon Go is a cozy 2D endless runner inspired by Flappy Bird. Guide a lost bal
 - Collect coins to unlock new balloons in the shop.
 - Press **Esc** or **P** to pause.
 
-Features 18 balloon skins, a full shop, persistent high score and coins, a layered parallax forest, procedural audio, and a Vietnamese UI with responsive safe-area support.
+Features 18 balloon skins, a full shop, persistent high score and coins, a layered parallax forest, three edge-branch variants, a handcrafted wooden UI, procedural audio, and Vietnamese text with responsive safe-area support.
 
 Made with Unity.

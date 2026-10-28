@@ -57,25 +57,27 @@ Ket qua:
 - Upload BalloonGo-WebGL.zip cho ban web (chon "This file will be played in the browser").
 - Upload BalloonGo-Windows.zip cho ban Windows.
 - Kich thuoc nhung khuyen nghi: 1280 x 720.
-- Neu WebGL bi loi tren itch.io, kiem tra lai compression: ban build mac dinh dung Gzip + Decompression Fallback.
+- Ban WebGL mac dinh dung Gzip + Decompression Fallback; da test ca khi server co header Content-Encoding va khi khong co header (fallback tu giai nen).
 
 7. CAU TRUC CHINH
 -----------------
 Assets/Scripts/Core       : luong game, diem, shop, luu, am thanh
 Assets/Scripts/Player     : dieu khien bong bay, skin
-Assets/Scripts/Obstacles  : canh cay
-Assets/Scripts/Enemies    : chim
+Assets/Scripts/Obstacles  : Obstacle, ObstacleSpawner, BranchObstacle (canh tu mep tren/duoi)
+Assets/Scripts/Enemies    : chim (scale nho, de ne)
 Assets/Scripts/Collectibles: xu
-Assets/Scripts/UI         : UI runtime, theme, panel, safe area
+Assets/Scripts/UI         : UI runtime, theme go, panel, safe area
 Assets/Scripts/Visual     : fog, hieu ung, camera shake, parallax
 Assets/Resources/Balloons : 18 sprite bong bay
-Assets/Resources/Fonts    : LiberationSans.ttf (ho tro tieng Viet)
+Assets/Resources/Obstacles: BranchGreen.png, BranchGold.png, BranchMoss.png
+Assets/Resources/Fonts    : BeVietnamPro-SemiBold.ttf, BeVietnamPro-ExtraBold.ttf
+                            (du phong: LiberationSans.ttf)
 Assets/Editor             : build script
 
 8. XU LY SU CO
 --------------
 - Khong thay UI: kiem tra scene co UIManager khong; UIManager se tu tao Canvas "BG_Canvas".
-- Chu bi thieu dau: kiem tra Assets/Resources/Fonts/LiberationSans.ttf con ton tai.
+- Chu bi thieu dau: kiem tra Assets/Resources/Fonts/BeVietnamPro-SemiBold.ttf va BeVietnamPro-ExtraBold.ttf con ton tai; neu thieu, UI tu fallback ve LiberationSans.ttf.
 - Khong vao duoc game: kiem tra console co loi compile khong; thu xoa Library/ScriptAssemblies va de Unity import lai.
 - Am thanh khong co: kiem tra nut AM THANH trong menu/pause; tren WebGL can click vao game truoc khi audio bat dau.
 - Build WebGL loi: dam bao da cai WebGL Build Support trong Unity Hub.
@@ -86,7 +88,7 @@ Assets/Editor             : build script
 - Birds: SR Studios Kerala
 - Coin: 2DRPK
 - Forest background: FREE Parallax Forest Background HQ
-- Font: Liberation Sans (SIL OFL)
+- Font: Be Vietnam Pro (SIL OFL); Liberation Sans lam font du phong (SIL OFL)
 - Code/UI/audio: Balloon Go project
 
 Chuc ban choi vui va tim duoc duong ve nha!

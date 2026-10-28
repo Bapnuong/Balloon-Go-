@@ -4,20 +4,25 @@ using UnityEngine;
 public class ObstacleSpawner : MonoBehaviour
 {
     public GameObject obstaclePrefab;
+    [Tooltip("Legacy range kept for scene compatibility. Edge branches now grow from the top/bottom.")]
     public Vector2 yRange = new Vector2(-2.2f, 2.2f);
     public float startInterval = 2.7f;
     public float endInterval = 1.4f;
     public float minSpeed = 4f;
     public float maxSpeed = 7.2f;
+
     [Header("Short edge branches")]
     [Tooltip("Base scale for the shortened branch pieces.")]
-    public float branchScale = 0.56f;
-    [Tooltip("How far the branch is allowed to enter the play area from the top/bottom edge.")]
-    public float edgeVisibleDepth = 1.1f;
+    public float branchScale = 0.45f;
+    [Tooltip("How far the cut base sits outside the top/bottom edge.")]
+    public float baseMargin = 0.35f;
+    [Tooltip("Per-variant size multipliers: green, gold, moss.")]
+    public float[] variantScales = { 0.95f, 0.9f, 1.05f };
 
     readonly List<GameObject> spawned = new List<GameObject>();
     Transform spawnRoot;
     float timer;
+    int lastVariant = -1;
 
     void Awake()
     {
@@ -48,44 +53,38 @@ public class ObstacleSpawner : MonoBehaviour
     void Spawn()
     {
         Camera cam = Camera.main;
-        if (cam == null) return;
+        if (cam == null || obstaclePrefab == null) return;
+
+        int variant = Random.Range(0, 3);
+        if (variant == lastVariant) variant = (variant + 1) % 3;
+        lastVariant = variant;
+
+        bool fromTop = Random.value > 0.5f;
+        float variantScale = variantScales != null && variant < variantScales.Length
+            ? variantScales[variant]
+            : 1f;
+        float scale = branchScale * variantScale;
+
+        var go = Instantiate(obstaclePrefab, Vector3.zero, Quaternion.identity, spawnRoot);
+        go.transform.localScale = Vector3.one * scale;
+
+        var branch = go.GetComponent<BranchObstacle>();
+        if (branch == null) branch = go.AddComponent<BranchObstacle>();
+        branch.Setup(variant, fromTop);
 
         float halfWidth = cam.orthographicSize * cam.aspect;
-        float branchHalfWidth = 15.36f * branchScale * 0.5f;
-        float x = cam.transform.position.x + halfWidth + branchHalfWidth + 0.6f;
-        int variant = Random.Range(0, 3);
-        bool fromTop = Random.value > 0.5f;
-        float variantScale = new[] { 0.88f, 1f, 1.12f }[variant];
-        float pieceHalfHeight = 2.4f * branchScale * variantScale * 0.5f;
+        float x = cam.transform.position.x + halfWidth + branch.Thickness * scale * 0.5f + 0.7f;
         float top = cam.transform.position.y + cam.orthographicSize;
         float bottom = cam.transform.position.y - cam.orthographicSize;
-        float y = fromTop
-            ? top - edgeVisibleDepth + pieceHalfHeight
-            : bottom + edgeVisibleDepth - pieceHalfHeight;
-
-        // Only one short branch is spawned per interval. Its cut end stays
-        // beyond the top or bottom boundary so it is hidden by the screen edge.
-        SpawnPiece(x, y, variant, fromTop);
-    }
-
-    void SpawnPiece(float x, float y, int variant, bool fromTop)
-    {
-        if (obstaclePrefab == null) return;
-
-        float[] variantScales = { 0.88f, 1f, 1.12f };
-        float[] variantAngles = { -4f, 0f, 5f };
-        float scale = branchScale * variantScales[Mathf.Clamp(variant, 0, 2)];
-        float angle = variantAngles[Mathf.Clamp(variant, 0, 2)] * (fromTop ? 1f : -1f);
-
-        var go = Instantiate(obstaclePrefab, new Vector3(x, y, 0f), obstaclePrefab.transform.rotation, spawnRoot);
-        // The upper branch is upside down so its cut end is hidden behind
-        // the top boundary; the lower branch keeps the normal orientation.
-        go.transform.localScale = new Vector3(scale, fromTop ? -scale : scale, scale);
-        go.transform.Rotate(0f, 0f, angle);
+        float y = fromTop ? top + baseMargin : bottom - baseMargin;
+        go.transform.position = new Vector3(x, y, 0f);
 
         var obstacle = go.GetComponent<Obstacle>();
         if (obstacle != null)
-            obstacle.speed = Mathf.Lerp(minSpeed, maxSpeed, GameManager.Instance.Difficulty01);
+        {
+            float difficulty = GameManager.Instance != null ? GameManager.Instance.Difficulty01 : 0f;
+            obstacle.speed = Mathf.Lerp(minSpeed, maxSpeed, difficulty);
+        }
 
         spawned.Add(go);
     }
@@ -99,5 +98,6 @@ public class ObstacleSpawner : MonoBehaviour
         }
         spawned.Clear();
         timer = startInterval * 0.55f;
+        lastVariant = -1;
     }
 }

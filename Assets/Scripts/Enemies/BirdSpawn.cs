@@ -11,7 +11,7 @@ public class BirdSpawn : MonoBehaviour
     public float minSpeed = 5.5f;
     public float maxSpeed = 8.5f;
     [Tooltip("Runtime scale keeps the bird proportional to the map.")]
-    public float birdScale = 0.18f;
+    public float birdScale = 0.11f;
 
     readonly List<GameObject> spawned = new List<GameObject>();
     Transform spawnRoot;
